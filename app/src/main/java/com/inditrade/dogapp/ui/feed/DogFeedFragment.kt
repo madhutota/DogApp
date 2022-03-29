@@ -18,6 +18,7 @@ import com.inditrade.dogapp.ui.base.BaseFragment
 import com.inditrade.dogapp.ui.detail.DogDetailFragmentArgs
 import com.inditrade.dogapp.utils.hide
 import com.inditrade.dogapp.utils.show
+import com.inditrade.dogapp.utils.showSnakeBarDefault
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -82,7 +83,7 @@ class DogFeedFragment() : BaseFragment<FragmentDogFeedBinding, DogFeedViewModel>
                 }
                 is State.Error -> {
                     binding.progressBar.hide()
-                    Toast.makeText(requireContext(), state.message, Toast.LENGTH_LONG).show()
+                    binding.parent.showSnakeBarDefault("No data found")
                 }
                 is State.Success -> {
                     binding.progressBar.hide()
@@ -101,7 +102,7 @@ class DogFeedFragment() : BaseFragment<FragmentDogFeedBinding, DogFeedViewModel>
                 }
                 is State.Error -> {
                     binding.progressBar.hide()
-                    Toast.makeText(requireContext(), state.message, Toast.LENGTH_LONG).show()
+                    binding.parent.showSnakeBarDefault("No data found")
                 }
                 is State.Success -> {
                     binding.progressBar.hide()
