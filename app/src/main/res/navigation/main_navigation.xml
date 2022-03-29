@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/feeds">
+    <fragment
+        android:id="@+id/feeds"
+        android:name="com.inditrade.dogapp.ui.feed.DogFeedFragment"
+        android:label=""
+        tools:layout="@layout/fragment_dog_feed">
+
+        <action
+            android:id="@+id/action_feeds_to_detail"
+            app:destination="@id/detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detail"
+        android:name="com.inditrade.dogapp.ui.detail.DogDetailFragment"
+        android:label=""
+        tools:layout="@layout/fragment_dog_detail">
+        <argument
+            android:name="dogImage"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
